@@ -10,5 +10,36 @@
     "react"
   ],
   "author": "Jairo Dueñas",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "documentation": "^14.0.0",
+    "eslint": "^8.23.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.0.2",
+    "source-map-loader": "^4.0.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^5.3.3",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.2.1"
+  }
 }
