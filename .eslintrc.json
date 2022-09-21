@@ -4,16 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "overrides": [
-        {
-            "files":[
-                "*.jsx",
-                ".js"
-            ]
-        }
+        "plugin:react/recommended"
+        //"airbnb"
     ],
     "globals": {
         "document": true
@@ -23,14 +15,27 @@
             "version": "detect"
         }
     },
-
+    "overrides": [
+        {
+            "files":[
+                "*.jsx",
+                "*.js"
+            ]
+        }
+    ],
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
         "react"
     ],
     "rules": {
+        "indent": 0,
+        "react/prop-types": 0
+        // "arrow-body-style": "off"
     }
 }

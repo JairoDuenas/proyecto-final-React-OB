@@ -20,10 +20,9 @@ module.exports = {
   context: path.resolve(__dirname),
   devServer: {
     port,
-    inline: true,
-    historyApiFallBack: true,
+    // historyApiFallBack: true,
   },
-  devTool: 'eval-source-map',
+  // devTool: 'eval-source-map',
   module: {
     rules: [
       // Reglas para archivos JS y JSX
@@ -42,30 +41,31 @@ module.exports = {
       {
         test: /(\.js|\.jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            '@babel/env',
-            '@babel/react',
-          ],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/env',
+              '@babel/react',
+            ],
+          },
         },
       },
       // Reglas para archivos CSS, SCSS y SASS para minificarlos y cargarlos en el bundle
       {
         test: /(\.css|\.scss|\.sass)$/,
-        loader: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
         ],
+        exclude: /node_modules/,
       },
       // Reglas para los archivos de imágenes
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
-          {
-            loader: 'file-loader',
-          },
+          { loader: 'file-loader' },
         ],
       },
     ],
@@ -74,7 +74,7 @@ module.exports = {
     // Template HTML
     new HtmlWebpackPlugin(
       {
-        template: './index.html',
+        template: './public/index.html',
       },
     ),
     new MiniCssExtractPlugin(
@@ -93,5 +93,8 @@ module.exports = {
     modules: [
       'node_modules',
     ],
+    alias: {
+      'react-redux': path.join(__dirname, '/node_modules/react-redux/dist/react-redux.min'),
+    },
   },
 };
