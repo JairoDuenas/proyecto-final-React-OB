@@ -5,7 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended"
-        //"airbnb"
+        // "airbnb"
     ],
     "globals": {
         "document": true
@@ -35,7 +35,8 @@
     ],
     "rules": {
         "indent": 0,
-        "react/prop-types": 0
-        // "arrow-body-style": "off"
+        "react/prop-types": 0,
+        "quotes": ["warn", "double"]
+        //"arrow-body-style": 0
     }
 }
